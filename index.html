@@ -373,7 +373,6 @@
                 .attr("fill", "lightgrey")
                 .style("stroke-size", "1px");
             
-
             svg2.append("circle")
                 .attr("r", 15)
                 .attr("cx", width-100)
@@ -388,7 +387,7 @@
 
             svg2.append("circle")
                 .attr("r", 15)
-                .attr("cx", width-100)
+                .attr("cx", width-65)
                 .attr("cy", (height+100)-140)
                 .style("fill", "lightcoral");
 
@@ -397,6 +396,13 @@
                 .attr("cx", width-100)
                 .attr("cy", (height+100)-105)
                 .style("fill", "#007FFF");
+            
+            svg2.append("text")
+                .attr("class", "label")
+                .attr("x", width -125)
+                .attr("y", (height+100)-200)
+                .style("text-anchor", "end")
+                .text("Map Legend");
 
             svg2.append("text")
                 .attr("class", "label")
@@ -446,7 +452,7 @@
                 .append("center")
                 .append("p")
                 .append("text")
-                .text("District 12 (highlighted in dark blue) has recieved scrutiny for its shaping. With awareness and great effort, the district's boarders are slowly being restored");
+                .text("District 12 (highlighted in dark blue) has recieved scrutiny for it's irregular shaping. With awareness and great effort, the district's boarders are slowly being restored.");
 
 
 
