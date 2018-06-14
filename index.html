@@ -215,10 +215,8 @@
 <body>
     <center><p style="font-size:30px; font-weight:bold">Rig By Gerrymandering 
         <br> <a style="font-size:20px; font-weight:normal">in NC-district 12 and MD-districts 3 and 6</a></p></center>
-    <p style="padding: 10px">Gerrymandering is a tactic used by political parties to essentially "guarantee" wins in select states years before an actual election occurs. This is done, specifically, by manipulating the way the votes are tallied. Certain states, districts, and demographics are more susceptible than others. Below is an interactable graph that displays the GMI or Gerrymander Index, and associated maps (on click) of three specific states: North Carolina, a historically high GMI republican state, Maryland, a high GMI democrat state, and Indiana, one of the healthiest GMI states in the country.</p>
-    <!-- <svg width="600" height="350"></svg>
-<svg2 width="600" height="350"></svg2> -->
-
+    <p style="padding: 10px">Gerrymandering is a tactic used by political parties to essentially "guarantee" wins in select states years before an actual election occurs. This is done, specifically, by manipulating the way the votes are tallied. Certain states, districts, and demographics are more susceptible than others. Below is an interactable graph that displays the GMI or Gerrymander Index, and associated maps (on click) of three specific states: North Carolina, a historically high GMI republican state, Maryland, a high GMI democrat state, and Indiana, one of the healthiest GMI states in the country. GMI was calculated as follows: 
+        <center>GMI = 100 - (State’s Polsby-Popper Value). Check sources for explanation.</center></p>
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
@@ -430,152 +428,6 @@
             var myGraphs = d3.select("body")
             .append("div")
             .attr("id", "chart1");
-            /*
-            var	chart = d3.select("#chart1")
-            //.append("div")
-            //.attr("id", "chart1")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-            var	chart2 = d3.select("#chart1")
-            // .append("div")
-            //.attr("id", "chart2")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr("id", "chart2")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-            var	chart3 = d3.select("#chart1")
-            //.append("div")
-            //.attr("id", "chart1")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-            var	chart4 = d3.select("#chart1")
-            // .append("div")
-            //.attr("id", "chart2")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-
-            d3.json("North_Carolina_106_to_106.json", function(error, topology) {
-                if (error) throw error;
-
-                var tooltip = d3.select("body").append("div")
-                .attr("class", "toolTip")
-                .style("background",'#BCC5F7');
-
-                console.log(topology);
-                var projection = d3.geoMercator().fitSize([width, height], topology);
-                var path = d3.geoPath().projection(projection);
-
-                chart
-                    .selectAll("path")
-                    .data(topology.features)
-                    .enter().append("path")
-                    .attr("fill", function(d) { console.log(d.properties.district + " " + d.properties.id); return d.properties.id;})
-                //.attr("fill", "white")
-                    .attr("stroke", "#000")
-                    .attr("stroke-width", 2)
-                    .attr("stroke-opacity", 0.3)
-                    .attr("d", path);
-
-                chart
-                    .append("text")
-                    .attr("dx", function(d){return -20})
-                    .text("2000 (106th Congress)");
-                console.log("chart", chart);
-
-            });
-
-
-            d3.json("North_Carolina_107_to_107.json", function(error, topology) {
-                if (error) throw error;
-
-                console.log(topology);
-                var projection2 = d3.geoMercator().fitSize([width, height], topology);
-                var path2 = d3.geoPath().projection(projection2);
-
-                chart2
-                    .selectAll("path")
-                    .data(topology.features)
-                    .enter().append("path")
-                    .attr("fill", function(d) { console.log(d.properties.district + " " + d.properties.id);  return d.properties.id;})
-                // .attr("fill", "white")
-                    .attr("stroke", "#000")
-                    .attr("stroke-width", 2)
-                    .attr("stroke-opacity", 0.3)
-                    .attr("d", path2);
-                //.attr("transform", "translate(0," + 150 + ")");
-                chart2
-                    .append("text")
-                    .attr("dx", function(d){return -20})
-                    .text("2004 (107th Congress)");
-
-            });
-
-            d3.json("North_Carolina_108_to_112.json", function(error, topology) {
-                if (error) throw error;
-
-                console.log(topology);
-                var projection = d3.geoMercator().fitSize([width, height], topology);
-                var path = d3.geoPath().projection(projection);
-
-                chart3
-                    .selectAll("path")
-                    .data(topology.features)
-                    .enter().append("path")
-                    .attr("fill", function(d) { return d.properties.id;})
-                //.attr("fill", "white")
-                    .attr("stroke", "#000")
-                    .attr("stroke-width", 2)
-                    .attr("stroke-opacity", 0.3)
-                    .attr("d", path);
-
-                chart3
-                    .append("text")
-                    .attr("dx", function(d){return -20})
-                    .text("2012 (112th Congress)");
-
-            });
-
-
-            d3.json("North_Carolina_current.json", function(error, topology) {
-                if (error) throw error;
-
-                console.log(topology);
-                var projection = d3.geoMercator().fitSize([width, height], topology);
-                var path = d3.geoPath().projection(projection);
-
-                chart4
-                    .selectAll("path")
-                    .data(topology.features)
-                    .enter().append("path")
-                    .attr("fill", function(d) { return d.properties.id;})
-                //.attr("fill", "white")
-                    .attr("stroke", "#000")
-                    .attr("stroke-width", 2)
-                    .attr("stroke-opacity", 0.3)
-                    .attr("d", path);
-
-                chart4
-                    .append("text")
-                    .attr("dx", function(d){return -20})
-                    .text("2017 (115th Congress: Current)");
-
-            })
-            */
 
             function NC2000() {
                 //d3.selectAll("svg > *").remove();
@@ -1052,9 +904,6 @@
     <p style="font-size:7px; text-align: right;">(͠≖ ͜ʖ͠≖)</p>
 
 
-
-
-
     <div class = "note" id ="note"  style="position:relative;right:0px; font-size:16px; text-align:center;" id="myParagraph">
         <div class = 'author'>
             <h4 style="font-weight: bold"><br/>Created by</h4>
@@ -1065,7 +914,6 @@
             <h4 style="font-weight: bold"><br/>Designed for</h4>
             <p id="myParagraph">CMPS 163: Data Visualization, Spring 2018</p>
         </div>
-
 
         <div class="row">
             <div class="column left">
