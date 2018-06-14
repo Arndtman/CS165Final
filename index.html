@@ -216,7 +216,7 @@
     <center><p style="font-size:30px; font-weight:bold">Rigging Elections By Gerrymandering 
         <br> <a style="font-size:20px; font-weight:normal">Contrasting Notable districts in North Carolina and Maryland to a Healthy State</a></p></center>
     <p style="padding: 10px">Gerrymandering is a tactic used by political parties to essentially "guarantee" wins in select states years before an actual election occurs. This is done, specifically, by manipulating the way the votes are tallied. Certain states, districts, and demographics are more susceptible than others. Below is an interactable graph that displays the Gerrymander Index (GMI), and associated maps (on click) of three specific states: North Carolina, a historically high GMI republican state, Maryland, a historically high GMI democrat state, and Indiana, one of the healthiest GMI states in the country. GMI was calculated as follows: 
-        <center>GMI = 100 - (State’s Polsby-Popper Value). Check sources for explanation.</center></p>
+        <center>GMI = 100 - (State’s Polsby-Popper Value). See sources for details.</center></p>
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
@@ -312,8 +312,8 @@
                         .html("State: " + (d.country) + "<br>" 
                               +"GMI: " + (d.gdp) +"" + "<br>"
                               + "Ethnicity of " + (d.id) + ":" + "<br>"
-                              + "Black: " + (d.black) + "%" +"<br>"
                               + "White: "  + (d.white) + "%"+"<br>"
+                              + "Black: " + (d.black) + "%" +"<br>"
                               + "Other: "  + (d.other) + "%"+"<br>"
                               + "(2010 Census Data)"
                              );
@@ -433,8 +433,15 @@
                 //d3.selectAll("svg > *").remove();
                 // d3.select("chart1").selectAll("g").remove();
                 d3.selectAll("#chart1 > *").remove(); 
-
+                
                 var myText = d3.select("#chart1")
+                .append("center")
+                .append("p")
+                .append("text")
+                .style("font-weight", "bold")
+                .text("North Carolina");
+
+                var myText2 = d3.select("#chart1")
                 .append("center")
                 .append("p")
                 .append("text")
@@ -587,14 +594,21 @@
             function MD2000() {
                 //d3.selectAll("svg > *").remove();
                 d3.selectAll("#chart1 > *").remove(); 
-
+                
                 var myText = d3.select("#chart1")
+                .append("center")
+                .append("p")
+                .append("text")
+                .style("font-weight", "bold")
+                .text("Maryland");
+
+                var myText2 = d3.select("#chart1")
                 .append("center")
                 .append("p")
                 .append("text")
                 .text("Districts 3 and 6 (highlighted in dark blue/red) suffer some of the same tactics as district 12 in North Carolina. They remain without repair however.");
                 
-                var myText2 = d3.select("#chart1")
+                var myText3 = d3.select("#chart1")
                 .append("center")
                 .append("p")
                 .append("text")
@@ -746,8 +760,15 @@
 
             function IN2000() {
                 d3.selectAll("#chart1 > *").remove(); 
-
+                
                 var myText = d3.select("#chart1")
+                .append("center")
+                .append("p")
+                .append("text")
+                .style("font-weight", "bold")
+                .text("Indiana");
+
+                var myText2 = d3.select("#chart1")
                 .append("center")
                 .append("p")
                 .append("text")
