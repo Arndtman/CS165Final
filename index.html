@@ -213,8 +213,9 @@
 </style>
 
 <body>
-    <center><p style="font-size:30px; font-weight:bold">Rig By Gerrymandering</p></center>
-    <p style="padding: 10px">Gerrymandering is a tactic used by political parties to essentially "guarantee" wins in select states years before an actual election occurs. This is done, specifically, by manipulating the way the votes are tallied. Certain states, districts, and demographics are more susceptible than others. Below is an interactable graph that displays the GMI or Gerrymander Index and associated maps (on click) of three specific states: North Carlolina, a historically high GMI republican state, Maryland, a high GMI democrat state, and Indiana, one of the healthiest GMI states in the country.</p>
+    <center><p style="font-size:30px; font-weight:bold">Rig By Gerrymandering 
+        <br> <a style="font-size:20px; font-weight:normal">in NC-district 12 and MD-districts 3 and 6</a></p></center>
+    <p style="padding: 10px">Gerrymandering is a tactic used by political parties to essentially "guarantee" wins in select states years before an actual election occurs. This is done, specifically, by manipulating the way the votes are tallied. Certain states, districts, and demographics are more susceptible than others. Below is an interactable graph that displays the GMI or Gerrymander Index, and associated maps (on click) of three specific states: North Carolina, a historically high GMI republican state, Maryland, a high GMI democrat state, and Indiana, one of the healthiest GMI states in the country.</p>
     <!-- <svg width="600" height="350"></svg>
 <svg2 width="600" height="350"></svg2> -->
 
@@ -739,7 +740,15 @@
                 .append("center")
                 .append("p")
                 .append("text")
-                .text("Districts 3 and 6 (highlighted in dark red/blue) suffer some of the same tactics as district 12 in North Carolina. They remain without repair however.");
+                .text("Districts 3 and 6 (highlighted in dark blue/red) suffer some of the same tactics as district 12 in North Carolina. They remain without repair however.");
+                
+                var myText2 = d3.select("#chart1")
+                .append("center")
+                .append("p")
+                .append("text")
+                .text("Note: District 6 votes democratic in 2016");
+                
+                
 
                 var	chart1 = d3.select("#chart1")
                 //.append("div")
@@ -1051,7 +1060,8 @@
             <h4 style="font-weight: bold"><br/>Created by</h4>
             <p style="position:relative;top:0px;right:0px; font-size:16px; text-align:center;" id="myParagraph">
                 Alex Arndt (acarndt@ucsc.edu) in collaboration with Suresh K Lodha</p>
-            <p>Github Link: <a href="https://arndtman.github.io/CS165Final/">https://arndtman.github.io/CS165Final/</a></p>
+            <p>Github Link: <a href="https://arndtman.github.io/CS165Final/">https://arndtman.github.io/CS165Final</a></p>
+            <p>Github Repo: <a href="https://github.com/Arndtman/CS165Final">https://github.com/Arndtman/CS165Final</a></p>
             <h4 style="font-weight: bold"><br/>Designed for</h4>
             <p id="myParagraph">CMPS 163: Data Visualization, Spring 2018</p>
         </div>
