@@ -307,14 +307,16 @@
                 ret.on("mousemove", function(d){
                     tooltip
                         .style("left", d3.event.pageX - 50 + "px")
-                        .style("top", d3.event.pageY - 100 + "px")
+                        .style("top", d3.event.pageY - 123 + "px")
                         .style("display", "inline-block")
                         .style("pointer-events", "none")
                         .html("State: " + (d.country) + "<br>" 
                               +"GMI: " + (d.gdp) +"/100" + "<br>"
-                              + "GDP: $" + 11 + " trillion" +"<br>"
-                              + "EPC: "  + 15 + " million BTUs"+"<br>"
-                              + "Total: " + 5 + " trillion BTUs"
+                              + "Ethnicity of " + (d.id) + ":" + "<br>"
+                              + "Black: " + (d.black) + "%" +"<br>"
+                              + "White: "  + (d.white) + "%"+"<br>"
+                              + "Other: "  + (d.other) + "%"+"<br>"
+                              + "(2010 Census Data)"
                              );
                 })
                     .on("mouseout", function(d){ tooltip.style("display", "none");})
@@ -1058,13 +1060,26 @@
         <div class="row">
             <div class="column left">
                 <b>Files Submitted</b>
-                <p>index.html<br>linechartStyle.css<br>linechart.js<br>territory_dataWithBegining.csv</p>
+                <p>index.html<br>
+                    GMI.csv<br>
+                    Indiana_98_to_102.json<br>
+                    Indiana_103_to_107.json<br>
+                    Indiana_108_to_112.json<br>
+                    IN-current.json<br>
+                    Maryland_98_to_102.json<br>
+                    Maryland_103_to_107.json<br>
+                    Maryland_108_to_112.json<br>
+                    MD-current.json<br>
+                    North_Carolina_106_to_106.json<br>    
+                    North_Carolina_107_to_107.json<br>  
+                    North_Carolina_108_to_112.json<br>  
+                    North_Carolina_current.json<br>  
+                </p>
             </div>
             <div class="column middle1">
                 <b>Data Sources</b>
                 <p>
-                    <a data-brackets-id='62' href="https://www.reddit.com/r/dataisbeautiful/comments/5p1sd4/chinese_dynasties_4000_years_of_history_oc/">Chinese Dynasties: 4000+ years of history</a><br>
-                    <a data-brackets-id='62' href="http://www.360doc.com/content/14/0113/20/2006953_345037706.shtml">The population statistics of Chinese history</a><br>
+                    <a data-brackets-id='62' href="https://docs.google.com/document/d/1Y8XHyoRR2uOKfc5BncWRiAigworASKCTLmT3iX0vQuM/edit?usp=sharing">Google Doc of sources due to sheer volume</a><br>
                 </p>
             </div>
             <div class="column middle2">
