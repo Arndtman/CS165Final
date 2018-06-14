@@ -296,7 +296,7 @@
                 })
                 // create increasing to decreasing shade of blue as shown on the output
                 .attr("fill", function(d) {
-                    console.log(d.color); return "#7cfc00"
+                    console.log(d.color); return "#77dd77"
                     //return String(d.color)
                     //return "rgb(0, 0, " + Math.round(255 - d.value * 11 + 70) + ")";
                     //return VALUE is just trial and error so the higher d.value is 
@@ -372,6 +372,7 @@
                 .attr("height", 115)
                 .attr("fill", "lightgrey")
                 .style("stroke-size", "1px");
+            
 
             svg2.append("circle")
                 .attr("r", 15)
