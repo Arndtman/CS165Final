@@ -1,4 +1,4 @@
-# CS165Final
+# Data and Visualization
 
 This hub hosts the files for my site linked below.
 
