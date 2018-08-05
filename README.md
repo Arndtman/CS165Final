@@ -1,6 +1,6 @@
 # Data and Visualization
 
-This hub hosts the page for my project. 
+This hub hosts the files and web page for my project. 
 
 Click the Live Link below to see my visualization that demonstrates JavaScript, HMTL, CSS, and the power of D3. 
 
