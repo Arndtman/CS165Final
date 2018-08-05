@@ -2,9 +2,9 @@
 
 This hub hosts the files for my site linked below.
 
-The visualization demonstrates JavaScript, HMTL, CSS, and the power of D3. 
+Click the link below to see my visualization that demonstrates JavaScript, HMTL, CSS, and the power of D3. 
 
-I used this as the final project for CS165: Data and Visualization Senior Exit Class at UCSC and I recieved an A grade. 
+This was my final project for CS165: Data and Visualization Senior Exit Class at UCSC and I recieved an A grade. 
 
 (͠≖ ͜ʖ͠≖)
  
